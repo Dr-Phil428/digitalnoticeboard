@@ -1,0 +1,371 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #663a82; /* Purple background */
+  color: white;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #4e2c66; /* Darker purple for sidebar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+    color: #00994d;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  display: block;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.top-bar {
+    color: #00cc66;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-name {
+  font-weight: bold;
+}
+
+.profile-pic {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #00cc66; /* Green border for profile pic */
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.stats span {
+  display: block;
+  font-size: 22px;
+}
+
+.see-all-container {
+  text-align: center;       /* Center the link */
+  margin-bottom: 8px;      /* Space between link and notification box */
+}
+
+.see-all {
+  color: #00cc66;           /* Green link */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+.notification-box {
+  margin: 80px auto;
+  border: 2px solid #cc00cc;
+  padding: 20px;
+  background-color: #5a2f75;
+  border-radius: 8px;
+  width: 60%;
+  text-align: center;
+}
+
+.view-btn {
+  background-color: #00cc66; /* Green button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.view-btn:hover {
+  background-color: #00994d;
+}
+.notice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.notice-card {
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.notice-card h3 {
+  margin-top: 0;
+}
+
+.notice-card.active {
+  background-color: #00cc66; /* Green for active */
+}
+
+.notice-card.pending {
+  background-color: #ff9900; /* Orange for pending */
+}
+
+.notice-card.expired {
+  background-color: #d391fa; /* Red for expired */
+}
+
+.notice-card small {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.create-notice {
+  background: #663a82;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+}
+
+.create-notice h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.notice-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #000;
+}
+.notice-form input[type="text"],
+.notice-form input[type="date"],
+.notice-form input[type="file"],
+.notice-form select,
+.notice-form textarea {
+  width: 100%;
+  max-width: 650px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.notice-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.notice-form button {
+  background: #164;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.notice-form button:hover {
+  background: #00cc66;
+}
+/* Profile card container */
+.profile-card {
+  max-width: 400px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+/* Header section */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  font-size: 60px;
+  color: #6a0dad; /* purple */
+  margin-bottom: 10px;
+}
+
+.profile-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.profile-header p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.role {
+  display: inline-block;
+  background: #28a745; /* green */
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Form section */
+h3 {
+  color: #6a0dad; /* purple */
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+form input:focus {
+  border-color: #6a0dad; /* purple focus */
+}
+
+/* Save button */
+.save-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #28a745; /* green */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #218838; /* darker green */
+}
+/* Notifications container */
+.notifications-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Section title */
+.notifications-container h2 {
+  color: #28a745;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 8px;
+}
+
+/* Individual message card */
+.notification-card {
+  background: #f9f9f9;
+  border-left: 5px solid #28a745;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notification-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Message text */
+.notification-card p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Timestamp */
+.notification-card small {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Reply form */
+.reply-form {
+  margin-top: 15px;
+}
+
+.reply-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  font-size: 0.95rem;
+}
+
+.reply-form button {
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reply-form button:hover {
+  background-color: #218838;
+}

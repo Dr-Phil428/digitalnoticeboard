@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="login.css?v=4">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Welcome Section -->
+        <div class="log-container">
+            <h1>
+                <span class="welcome">WELCOME</span>
+                <span class="back">BACK</span>
+            </h1>
+            <p class="subtitle">Login to access the Digital Noticeboard</p>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="login-container">
+            <h2>LOGIN</h2>
+            <form action="login.php" method="POST">
+                <input type="text" name="user_id" placeholder="UserID" required><br><br>
+        <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <span class="toggle-password" data-target="password">
+        <img src="eye-solid-full.svg" alt="Toggle password" width="20" height="20">
+       </span>
+     
+
+<!-- Floating tooltip -->
+      <div id="loginPasswordRequirements" class="requirements">
+       <p>Your password should contain:</p>
+       <ul>
+          <li id="login-lowercase">A lowercase letter (a)</li>
+          <li id="login-uppercase">An uppercase letter (A)</li>
+          <li id="login-number">A number</li>
+          <li id="login-special">A special character (!@#$)</li>
+          <li id="login-length">Minimum 6 characters</li>
+        </ul>
+      </div>
+        </div>
+       <label class="remember-me">
+        <input type="checkbox" name="remember"> Remember Me?
+         </label>
+                <button type="submit">Log In</button>
+            </form>
+            <div class="links">
+                <a href="forgot-password.html">Forgot Password?</a>
+                <a href="#" onclick="document.querySelector('.container').classList.add('active')">
+                    Don't have an account? Sign up
+                </a>
+            </div>
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div class="signup-container">
+            <h2>SIGN UP</h2>
+            <form action="signup.php" method="POST">
+                <input type="text" name="first_name" placeholder="First Name" required><br><br>
+                <input type="text" name="last_name" placeholder="Last Name" required><br><br>
+                <input type="text" name="user_id" placeholder="UserID" required><br><br>
+                <input type="email" name="email" placeholder="Email" required><br><br>
+                <input type="password" name="password" placeholder="Password" required><br><br>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+                <button type="submit">Create Account</button><br><br>
+                <div class="links">
+                    <a href="LOGIN1.html" onclick="document.querySelector('.container').classList.remove('active')">
+                        Back to Login
+                    </a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="login.js?v=4"></script>
+</body>
+</html>

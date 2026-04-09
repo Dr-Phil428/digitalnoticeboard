@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Access</title>
+  <link rel="stylesheet" href="checkAccess.css">
+</head>
+<body>
+  <div class="access-container">
+    <h2>Select user type:</h2>
+    <input type="radio" name="role" value="admin" onclick="showForm('admin')"> Admin<br>
+    <input type="radio" name="role" value="staff" onclick="showForm('staff')"> Staff<br>
+    <input type="radio" name="role" value="other" onclick="denyAccess()"> Others<br><br>
+
+    <!-- Admin form -->
+    <div id="adminForm" style="display:none;">
+      <form action="checkAccess.php" method="POST">
+        <input type="hidden" name="role" value="admin">
+        <label>Admin UserID:</label><br>
+        <input type="text" name="user_id" required><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Staff form -->
+    <div id="staffForm" style="display:none;">
+      <form action="checkAccess.php" method="POST">
+        <input type="hidden" name="role" value="staff">
+        <label>Staff UserID:</label><br>
+        <input type="text" name="user_id" required><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="checkAccess.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="Admin.css?v=53">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="topbar">
+    <div class="logo">Admin</div>
+    <nav class="nav-links">
+      <a href="#" onclick="showSection('dashboard')">Dashboard</a>
+      <a href="#" onclick="showSection('Notices')">Notices</a>
+      <a href="#" onclick="showSection('Reports')">Reports</a>
+      <a href="#" onclick="showSection('Reminders')">Reminders</a>
+      <a href="#" onclick="showSection('profile-page')">Profile</a>
+      <a href="#" id="logoutLink">Logout</a>
+    </nav>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard" class="dashboard">
+   <div class="greetings-card">
+        <h2>Hi👋, Welcome back AN001</h2>
+      </div>
+
+      <div class="row1">
+      <div class="calendar-card">
+        <h3>📅 Calendar</h3>
+        <div id="calendar"></div>
+      </div>
+    
+     
+     <div class="pie-card">
+        <h3>📊 Notices Breakdown</h3>
+        <canvas id="noticeChart"></canvas>
+      </div>
+      </div>
+     
+   <div class="row2">
+      <div class="live-preview">
+        <h2>Live Preview</h2>
+        <div class="notice-card" id="noticeCard">
+          <div class="notice-title" id="previewTitle">Notice Title</div>
+          <div class="notice-content" id="previewContent">Notice content will appear here...</div>
+        </div>
+      </div>
+      <div class="messages" id="messagesContainer">
+        <h3>💬 Messages</h3>
+
+      </div>
+    </div>
+   
+    </div>
+
+  
+  <div id="Notices" style="display:none; padding:20px;">
+    <h2>Create Notice</h2>
+    <input type="hidden" id="noticeStatus" name="status">
+
+    <label>Title:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label>Content:</label>
+    <textarea id="content"></textarea>
+
+    <label>Category:</label>
+    <select id="category" name="category" required>
+      <option value="announcement">Announcement</option>
+      <option value="event">Event</option>
+      <option value="timetable">Timetable</option>
+      <option value="sports">Sports</option>
+      <option value="schoolFees">School Fees</option>
+    </select>
+
+    <label>Priority:</label>
+    <select id="priority" name="priority" required>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+
+    <label>Posting Date:</label>
+    <input type="date" id="postingDate" name="posting_date" required>
+
+    <label>Expiry Date:</label>
+    <input type="date" id="expiryDate" name="expiry_date" required>
+
+    <label>Attachment:</label>
+    <input type="file" id="attachment" accept="image/*,video/*">
+
+    <div class="notice-actions">
+      <button onclick="saveNotice()">Save</button>
+      <button onclick="postNotice()">Post</button>
+      <button onclick="expiredNotice()">Expired</button>
+    </div>
+  </div>
+
+  
+<div id="Reports" style="display:none; padding:120px;">
+  <div class="reports-container">
+    
+    <div class="report-card expired" id="expiredReportsCard">
+      <div class="report-header">
+        <h3>Expired Posts</h3>
+        <div class="report-tools">
+          <button class="icon-btn" onclick="addNotice('expired')">
+            <span class="material-icons">add</span>
+          </button>
+        </div>
+      </div>
+      <p>Click to view details</p>
+      <div class="report-details" id="expiredPostsList">
+          <p>Loading expired posts...</p>
+        
+      </div>
+    </div>
+
+    <div class="report-card active" id="activeReportsCard">
+      <div class="report-header">
+        <h3>Active Posts</h3>
+        <div class="report-tools">
+          <button class="icon-btn" onclick="addNotice('active')">
+            <span class="material-icons">add</span>
+          </button>
+        </div>
+      </div>
+      <p>Click to view details</p>
+      <div class="report-details" id="activePostsList">
+          <p>Loading active posts...</p>
+      </div>
+    </div>
+
+    <div class="report-card pending" id="pendingReportsCard">
+      <div class="report-header">
+        <h3>Pending Posts</h3>
+        <div class="report-tools">
+          <button class="icon-btn" onclick="addNotice('pending')">
+            <span class="material-icons">add</span>
+          </button>
+        </div>
+      </div>
+      <p>Click to view details</p>
+      <div class="report-details" id="pendingPostsList">
+          <p>Full content of pending post...</p>
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+  <div id="Reminders" style="display:none; padding:120px;">
+    <h1>📅 Admin Reminders</h1>
+    <form id="reminderForm">
+      <input type="text" name="title" placeholder="Title" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <button type="submit">Save Reminder</button>
+    </form>
+    <div id="reminderList"></div>
+  </div>
+
+  
+  <div id="profile-page" class="profile-page" style="display:none;">
+    <div class="profile-card">
+      <div class="profile-pic">
+        <img src="avatar.png" alt="Profile Picture">
+      </div>
+      <div class="card-header">
+        <h2 id="name">Philomena Macharia</h2>
+        <span class="edit-icon" onclick="toggleForm()">🖋️</span>
+      </div>
+      <p><strong>Username:</strong> <span id="username">AN001</span></p>
+      <p><strong>Email:</strong> <span id="email">philjaymes831@gmail.com</span></p>
+      <p><strong>Phone:</strong> <span id="phone">+254 115 783 830</span></p>
+      <p><strong>Role:</strong> <span id="role">System Admin</span></p>
+
+  
+      <form id="editForm" style="display:none;" onsubmit="saveDetails(event)">
+        <input type="text" id="editName" placeholder="Name">
+        <input type="text" id="editUsername" placeholder="Username">
+        <input type="email" id="editEmail" placeholder="Email">
+        <input type="tel" id="editPhone" placeholder="Phone">
+        <input type="text" id="editRole" placeholder="Role">
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+<div id="logoutOverlay">
+  <div class="logout-text">You have logged out successfully.</div>
+</div>
+
+  <a href="sendMessage.html" class="floating-message-link">✉ Message</a>
+
+
+  <script src="Admin.js?v=80"></script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #1b5e20;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container for the access form */
+.access-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  width: 360px;
+  text-align: center;
+}
+
+/* Heading */
+.access-container h2 {
+  margin-bottom: 20px;
+  color: #28a745; /* green accent */
+  font-size: 22px;
+}
+
+/* Radio buttons */
+.access-container input[type="radio"] {
+  margin: 10px 5px;
+  cursor: pointer;
+}
+
+/* Forms for admin/staff */
+#adminForm, #staffForm {
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Input fields */
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #28a745; /* green accent */
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #218838; /* darker green on hover */
+  transform: scale(1.03);
+}

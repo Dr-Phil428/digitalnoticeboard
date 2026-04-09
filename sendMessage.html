@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Message</title>
+  <link rel="stylesheet" href="sendMessages.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Send a Message</h2>
+    <form action="processMessage.php" method="POST">
+      <label for="recipient">Recipient (Staff ID):</label>
+      <input type="text" id="recipient" name="recipient" required>
+
+      <label for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="General">General</option>
+        <option value="Sports">Sports</option>
+        <option value="Academics">Academics</option>
+      </select>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <a href="Admin.html" class="back-link">← Back to Dashboard</a>
+  </div>
+<div class="conversation-container">
+  <h3>Conversation with Staff</h3>
+  <div id="conversationThread"></div>
+</div>
+
+<script>
+function loadConversation() {
+  const staffId = document.getElementById("recipient").value;
+  if (!staffId) return;
+
+  fetch("getConversation.php?staff_id=" + staffId)
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("conversationThread").innerHTML = data;
+    })
+    .catch(err => console.error("Error loading conversation:", err));
+}
+
+// Refresh every 5 seconds
+setInterval(loadConversation, 5000);
+
+// Load immediately when page opens
+window.onload = loadConversation;
+</script>
+</body>
+</html>

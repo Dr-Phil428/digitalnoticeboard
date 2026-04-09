@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's New</title>
+  <link rel="stylesheet" href="whatsnew.css?v=5">
+  <style>
+    .lock-icon {
+      position: fixed;
+      top: 30px;
+      right: 20px;
+      width: 50px;       /* bigger size */
+      height: 50px;
+      background-color: #28a745; /* green background */
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;   /* size of the padlock symbol */
+      color: white;      /* padlock color */
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .lock-icon:hover {
+      transform: scale(1.1);
+      background-color: #218838; /* darker green on hover */
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- Full-page What's New -->
+  <div class="whatsnew-container">
+    <div class="overlay"></div>
+    <div class="notice-content">
+      <h1 id="previewTitle">No Active Notices</h1>
+      <p id="previewContent">Admin will post updates here soon.</p>
+    </div>
+  </div>
+
+  <!-- Floating Feedback Link -->
+  <div class="feedback-link">
+    <a href="feedback.html">Send Feedback</a>
+  </div>
+<a href="checkAccess.html" class="lock-icon">🔒</a>
+  <script src="whatsnew.js?v=4"></script>
+</body>
+</html>

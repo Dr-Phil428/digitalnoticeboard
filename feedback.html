@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Feedback</title>
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+  <div class="feedback-section">
+    <h2>Send us a feedback</h2>
+
+    <!-- Radio buttons to choose form -->
+    <label>I am:</label>
+    <input type="radio" name="formToggle" value="student" onclick="toggleForm()"> Student
+    <input type="radio" name="formToggle" value="parent" onclick="toggleForm()"> Parent
+
+    <!-- Student Form -->
+    <form id="studentForm" action="submit_student_feedback.php" method="POST" style="display:none;">
+      <!-- Hidden field ensures PHP gets userType -->
+      <input type="hidden" name="userType" value="student">
+
+      <label>Student ID:</label>
+      <input type="text" name="student_id" required><br>
+
+      <label>Grade:</label>
+      <input type="text" name="grade" required><br>
+
+      <label>Feedback Category:</label>
+      <input type="text" name="category" required><br>
+
+      <label>Message:</label>
+      <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea><br>
+
+      <button type="submit">SUBMIT</button>
+      <button type="reset">EDIT</button>
+    </form>
+
+    <!-- Parent Form -->
+    <form id="parentForm" action="submit_parent_feedback.php" method="POST" style="display:none;">
+      <input type="hidden" name="userType" value="parent">
+
+      <label>Student Grade:</label>
+      <input type="text" name="grade" required><br>
+
+      <label>Email Address:</label>
+      <input type="email" name="email" required><br>
+
+      <label>Feedback Category:</label>
+      <input type="text" name="category" required><br>
+
+      <label>Message:</label>
+      <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea><br>
+
+      <button type="submit">SUBMIT</button>
+      <button type="reset">EDIT</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const type = document.querySelector('input[name="formToggle"]:checked').value;
+      document.getElementById('studentForm').style.display = (type === 'student') ? 'block' : 'none';
+      document.getElementById('parentForm').style.display = (type === 'parent') ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

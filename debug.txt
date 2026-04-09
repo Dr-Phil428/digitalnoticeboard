@@ -1,0 +1,83 @@
+Array
+(
+    [title] => ENVIRONMENT CONSERVATION!!!
+    [content] => Help our school go green! Only plastic bottles and paper go in the blue bins. Please check the labels. 
+
+    [category] => announcement
+    [priority] => high
+    [posting_date] => 2026-03-04
+    [expiry_date] => 2026-03-05
+)
+
+Success
+Array
+(
+    [title] => CAREER GUIDANCE SEMINAR
+    [content] => You are hereby invited to a career guidance seminar that will be happening on 13th March 2026 from 10.00am in the school's Auditorium. This session will include various speakers from different career paths that will guide you on what career to choose and why. You are therefore expected to attend and to keep time so that the agenda of the day is achieved 
+    [category] => event
+    [priority] => medium
+    [posting_date] => 2026-03-04
+    [expiry_date] => 2026-03-12
+)
+
+Success
+Array
+(
+    [title] => NEXT TERM SCHOOL FEES!!
+    [content] => School fees for next term will be as follows:
+Lower graders = 20,500/=
+Upper graders = 30,330/=
+Ensure to let your parents know for better planning and timely payment of fees
+
+With regards: SCHOOL ACCOUNTANT
+    [category] => schoolFees
+    [priority] => high
+    [posting_date] => 2026-03-07
+    [expiry_date] => 2026-03-30
+)
+
+Success
+Array
+(
+    [title] => REMINDER TO ALL STUDENTS
+    [content] => The following: Basket ball players, footballers, the ones engaged in Racket games, Volleyball and hockey are reminded to continue training for the upcoming competitions which the date and venue will be communicated soon
+    [category] => sports
+    [priority] => medium
+    [posting_date] => 2026-03-09
+    [expiry_date] => 2026-03-14
+)
+
+Success
+Array
+(
+    [title] => ENVIRONMENT CONSERAVTION!!!
+    [content] => Help us make our compound clean by collecting any form of litter whether it is plastic bottles, nylon papers or dropped tissues.   
+    [category] => announcement
+    [priority] => medium
+    [posting_date] => 2026-03-08
+    [expiry_date] => 2026-03-10
+)
+
+Success
+Array
+(
+    [title] => ENVIRONMENT CONSERVATION
+    [content] => This is to remind all students to collect any litter that may be lying around the school compound. This will ensure that the environment is clean and a good space for normal school activities to take place
+    [category] => announcement
+    [priority] => low
+    [posting_date] => 2026-03-16
+    [expiry_date] => 2026-03-20
+)
+
+Success
+Array
+(
+    [title] => ENVIRONMENT CONSERVATION
+    [content] => This is to remind all students to collect any litter that may be lying around the school compound. This will ensure that the environment is clean and a good space for normal school activities to take place
+    [category] => announcement
+    [priority] => low
+    [posting_date] => 2026-03-16
+    [expiry_date] => 2026-03-20
+)
+
+Success
